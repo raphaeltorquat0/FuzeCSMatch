@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E6CC558C-7EBD-49D2-A848-4202F6AB4DE9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F848B76-245E-4374-B706-8B554ADCE3FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuzeCSMatch/View/MatchCard.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuzeCSMatch/Screens/MatchList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A - 3a82e0e7e29bb35e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in FuzeCSMatch.MatchListScreen.body.getter : some"
+                  moduleName = "FuzeCSMatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rbuchler/Documents/Documentos%20-%20MacBook%20Pro%20de%20Raphael/GitHub/studying/FuzeCSMatch/FuzeCSMatch/Screens/MatchList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "708">
+               </Location>
+               <Location
+                  uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A - f4c9ff3635af1d5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable () async -&gt; () in FuzeCSMatch.MatchListScreen.body.getter : some"
+                  moduleName = "FuzeCSMatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rbuchler/Documents/Documentos%20-%20MacBook%20Pro%20de%20Raphael/GitHub/studying/FuzeCSMatch/FuzeCSMatch/Screens/MatchList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "680">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8F8FEC4-A778-4F48-AF44-2FB62FCC0906"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuzeCSMatch/Screens/MatchList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
