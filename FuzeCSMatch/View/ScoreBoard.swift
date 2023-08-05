@@ -1,47 +1,53 @@
 import SwiftUI
 
 struct ScoreboardView: View {
-    var opponents: [Opponent]
-    var cMatch: Match?
+    private let matchUseCases: MatchUseCase = MatchUseCase()
+    var cMatch: Match
     
-    
-    private func getOpponents(_ opponents:[Opponent]) async throws -> [Opponent] {
-        guard !opponents.isEmpty else {
-            throw NetworkError.badRequest
-        }
-        
-        return opponents
+    private func getAMatchValue(_ match: Match) async throws {
+        try await matchUseCases.getAllValues([match])
+        print(matchUseCases)
     }
     
     var body: some View {
         GeometryReader { geometry in
             ScrollViewReader { ScrollViewProxy in
-                LazyVStack(spacing: 10) {
-                    ZStack(alignment: .center) {
-                        HStack(alignment: .center)  {
-                            MatchCard(opponent: opponents.first)
-                            Text("vs")
-                            MatchCard(opponent: opponents.last)
-                        }
-                        .frame(height: max(geometry.size.height, 300))
-                        .offset(y: -50)
-                        Divider()
-                        VStack(alignment: .leading) {
-                            Spacer()
-                            LeagueInfoView(cMatch: cMatch)
-                                .frame(height: 80)
-                        }
-                        .padding(.bottom, 10)
-                    }
-                    .padding()
-                    .cornerRadius(10)
-                    .frame(maxWidth:.infinity, alignment: .center)
+                HStack(spacing: 5) {
+                    MatchCard(teamImage: matchUseCases.oponnents?.first?.opponent.image_url, teamName: matchUseCases.oponnents?.first?.opponent.name)
+                        .frame(maxWidth: .infinity)
+                    Text("VS")
+                        .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                        .font(.headline)
+                    MatchCard(teamImage: matchUseCases.oponnents?.last?.opponent.image_url, teamName: matchUseCases.oponnents?.last?.opponent.name)
+                        .frame(maxWidth: .infinity)
                 }
+                .frame(height: 100)
+                .padding()
+                .background(Color.fromHex(Colors.mainColor.rawValue))
+                .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                .cornerRadius(10)
+                .padding(.horizontal, 15)
+                
+                Divider()
+                    .background(Color.fromHex(Colors.textTitleColor.rawValue))
+                    .frame(height: 3)
+                
+                HStack {
+                    Spacer()
+                    Group {
+                        LeagueInfoView(leagueName: matchUseCases.leagues?.first?.name, leagueImage: matchUseCases.leagues?.first?.image_url)
+                            .frame(width: 300, height: 80)
+                    }
+                    .background(Color.fromHex(Colors.mainColor.rawValue))
+                    .aspectRatio(contentMode: .fit)
+                }
+                
             }
+            
         }
         .task {
             do {
-                let _ = try await getOpponents(opponents)
+                let _ = try await getAMatchValue(cMatch)
             } catch  {
                 
             }

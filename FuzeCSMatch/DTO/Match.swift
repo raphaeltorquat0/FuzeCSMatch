@@ -1,3 +1,4 @@
+import Foundation
 struct Match: Codable {
     struct Game: Codable {
         struct Winner: Codable {
@@ -107,27 +108,34 @@ struct Match: Codable {
     let winner: String? // Inserir o tipo correto para o vencedor
     let winner_id: String?
     let winner_type: String?
+    
+    struct Opponent: Codable {
+        let opponent: OpponentDetalhes
+        let type: String?
+    }
+
+    struct OpponentDetalhes: Codable, Identifiable {
+        let acronym: String?
+        let id: Int
+        let image_url: String?
+        let location: String?
+        let modified_at: String
+        let name: String
+        let slug: String
+    }
+
+    struct StreamList: Codable {
+        let embedURL: String?
+        let language: String?
+        let main: Bool?
+        let official: Bool?
+        let rawURL: String?
+    }
+
+    struct Results: Codable {
+        let score: Int?
+        let teamId: Int?
+    }
+
 }
 
-struct Opponent: Codable {
-    let acronym: String?
-    let id: Int?
-    let image_url: String?
-    let location: String?
-    let modified_at: String?
-    let name: String?
-    let slug: String?
-}
-
-struct StreamList: Codable {
-    let embedURL: String?
-    let language: String?
-    let main: Bool?
-    let official: Bool?
-    let rawURL: String?
-}
-
-struct Results: Codable {
-    let score: Int?
-    let teamId: Int?
-}

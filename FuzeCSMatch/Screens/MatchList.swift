@@ -14,13 +14,13 @@ struct MatchListScreen: View {
     
     private func fetchMatches() async throws {
         do {
-            try await model.loadMoreMatches()
+            model.getAMatches = try await model.getmacthes()
         }
     }
     
     private func fetchPastedMatches() async throws {
         do {
-            try await model.getAPastMatches()
+            model.getPastMatches = try await model.getAPastMatches()
         }
     }
     
@@ -50,25 +50,25 @@ struct MatchListScreen: View {
         
         VStack {
             
-            if model.getMatches.isEmpty {
+            if model.getAMatches.isEmpty {
                 HStack {
                     Text("There's no matches found")
                 }
             } else {
                 List {
-                    ForEach(model.getMatches) { match in
-                        ScoreboardView(opponents: match.opponents.compactMap({ $0 }), cMatch: match).listRowInsets(EdgeInsets())
-                        
-                    }
+                    ForEach(model.getAMatches) { match in
+                        ScoreboardView(cMatch: match).frame(height: 300).listRowInsets(EdgeInsets())
+                    }.background(Color.fromHex(Colors.mainColor.rawValue))
                 }
             }
         }
         .task {
             do {
-                let matchesData = try await model.getMacthes()
-                model.getMatches = matchesData
-                print("\(model.getMatches)")
+                let matchesData = try await model.getmacthes()
+                DispatchQueue.main.async {
+                    model.getAMatches = matchesData
                 
+                }
             } catch {
                 print("Error fetching matches from JSON: \(error.localizedDescription)")
             }

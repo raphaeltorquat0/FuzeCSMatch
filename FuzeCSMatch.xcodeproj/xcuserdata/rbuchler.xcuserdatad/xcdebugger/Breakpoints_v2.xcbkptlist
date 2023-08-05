@@ -7,81 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8F848B76-245E-4374-B706-8B554ADCE3FE"
+            uuid = "6AFBEF64-0632-4AF0-BDE3-E2111BCE906C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FuzeCSMatch/View/MatchCard.swift"
+            filePath = "FuzeCSMatch/View/TeamCardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "buildView(rowIndex:geometry:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A"
+            uuid = "12E168C8-6E6F-4501-BF22-E0AF4E3FE259"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FuzeCSMatch/Screens/MatchList.swift"
+            filePath = "FuzeCSMatch/View/TeamCardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A - 3a82e0e7e29bb35e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in FuzeCSMatch.MatchListScreen.body.getter : some"
-                  moduleName = "FuzeCSMatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rbuchler/Documents/Documentos%20-%20MacBook%20Pro%20de%20Raphael/GitHub/studying/FuzeCSMatch/FuzeCSMatch/Screens/MatchList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "708">
-               </Location>
-               <Location
-                  uuid = "07FA50F6-D10D-48D4-936D-9AE06B92B75A - f4c9ff3635af1d5d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable () async -&gt; () in FuzeCSMatch.MatchListScreen.body.getter : some"
-                  moduleName = "FuzeCSMatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rbuchler/Documents/Documentos%20-%20MacBook%20Pro%20de%20Raphael/GitHub/studying/FuzeCSMatch/FuzeCSMatch/Screens/MatchList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "680">
-               </Location>
-            </Locations>
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "buildView(rowIndex:geometry:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8F8FEC4-A778-4F48-AF44-2FB62FCC0906"
+            uuid = "77DDB60C-D16B-489D-BF7D-0340CE53098B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FuzeCSMatch/Screens/MatchList.swift"
+            filePath = "FuzeCSMatch/View/TeamCardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "buildView(rowIndex:geometry:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

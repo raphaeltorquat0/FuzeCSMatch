@@ -14,10 +14,10 @@ struct Constants {
     struct URLS {
         
         static var currentPage = 1
-        static var pageSize = 10
+        static var pageSize = 15
         
         static func getMatches() async throws -> URL {
-            guard let getMatches = URL(string: "\(baseURLPath)/matches?per_page=\(pageSize)") else {
+            guard let getMatches = URL(string: "\(baseURLPath)/matches?per_page=\(pageSize)?filter=2023-08-05") else {
                 throw NetworkError.invalidURL
             }
             return getMatches
@@ -50,5 +50,13 @@ struct Constants {
             }
             return getUpcomingMatches
         }
+        
+        static func getMatchDetails(_ csgo_game_id: Int) async throws -> URL {
+            guard let getMatchDetails = URL(string: "\(baseURLPath)/games/\(csgo_game_id)") else {
+                throw NetworkError.invalidURL
+            }
+            return getMatchDetails
+        }
+        
     }
 }

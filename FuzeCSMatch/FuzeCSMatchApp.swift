@@ -26,11 +26,11 @@ struct FuzeCSMatchApp: App {
                             .navigationDestination(for: Route.self) { route in
                                 switch route {
                                 case .matchListScreen:
-                                    MatchListScreen()
+                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
                                 case .splashScreen:
-                                    SplashScreen()
+                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
                                 case .detailedMachScreen:
-                                    MatchListScreen()
+                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
                                 }
                             }
                     }
@@ -38,7 +38,7 @@ struct FuzeCSMatchApp: App {
                     .environmentObject(appState)
                     .onAppear {
                         isMatchListScreenActive = true
-                    }
+                    }.background(Color.fromHex(Colors.mainColor.rawValue))
                 }
                 
             }
