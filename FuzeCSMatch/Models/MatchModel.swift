@@ -54,15 +54,30 @@ class MatchesModel: ObservableObject {
     }
     
     func getMatchesFromJSON() async throws -> [Match] {
-        guard let url = Bundle.main.url(forResource: "matches", withExtension: "json") else {
+        guard let jsonData = readLocalFile(forName: "matches") else {
             throw NSError(domain: "MatchesModel", code: 404, userInfo: [NSLocalizedDescriptionKey: "JSON File not Found."])
         }
         
-        let data = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        let matches = try decoder.decode([Match].self, from: data)
-        getAMatches = matches
-        return matches
+        do {
+            let decoder = JSONDecoder()
+            let matches = try decoder.decode([Match].self, from: jsonData)
+            getAMatches = matches
+            return matches
+        } catch {
+            throw error
+        }
+    }
+    
+    private func readLocalFile(forName name: String) -> Data? {
+        do {
+            if let fileURL = Bundle.main.url(forResource: name, withExtension: "json") {
+                let data = try Data(contentsOf: fileURL)
+                return data
+            }
+        } catch {
+            print("Error reading local file: \(error)")
+        }
+        return nil
     }
     
 }

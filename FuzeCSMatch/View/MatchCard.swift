@@ -8,49 +8,28 @@
 import SwiftUI
 
 struct MatchCard: View {
-    var teamImage: String?
-    var teamName: String?
+    var teamImage: String
+    var teamName: String
     @State private var image: UIImage? = nil
     
     var body: some View {
-        VStack {
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
-            } else {
-                Color.gray
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
-            }
-            Text(teamName ?? "")
-                .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
-                .font(.caption)
-            
-        }.background(Color.fromHex(Colors.mainColor.rawValue))
-            .onAppear {
-                loadImage()
-            }
-    }
-    
-    private func loadImage() {
-        guard let imageURL = URL(string: teamImage ?? "") else { return }
-        
-        DispatchQueue.global().async {
-            do {
-                let imageData = try Data(contentsOf: imageURL)
-                if let loadedImage = UIImage(data: imageData) {
-                    DispatchQueue.main.async {
-                        image = loadedImage
-                    }
+        ZStack {
+            VStack(spacing: 0) {
+                Image(teamImage)
+                    .font(.system(size: 50))
+                    .frame(width: 50, height: 50)
+                    .padding(.bottom, 10)
+                VStack(spacing: 1) {
+                    Text(teamName)
+                        .font(.custom("Roboto-Medium", size: 15))
+                        .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                        .frame(width: .infinity, height: 50, alignment: .bottomLeading)
+                        .lineLimit(2)
                 }
-            } catch {
-                print("Error loading image: \(error)")
             }
+            .background(Color.fromHex(Colors.mainColor.rawValue))
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+            .padding(10)
         }
     }
 }

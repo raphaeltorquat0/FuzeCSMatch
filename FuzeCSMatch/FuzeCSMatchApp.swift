@@ -16,32 +16,32 @@ struct FuzeCSMatchApp: App {
     var body: some Scene {
         WindowGroup {
             
-            NavigationView {
-                if !appState.routes.isEmpty {
-                    SplashScreen()
-                        .environmentObject(appState)
-                } else {
-                    NavigationStack(path: $appState.routes) {
-                        MatchListScreen().environmentObject(model).environmentObject(appState)
-                            .navigationDestination(for: Route.self) { route in
-                                switch route {
-                                case .matchListScreen:
-                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
-                                case .splashScreen:
-                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
-                                case .detailedMachScreen:
-                                    MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
-                                }
-                            }
-                    }
-                    .environmentObject(model)
-                    .environmentObject(appState)
-                    .onAppear {
-                        isMatchListScreenActive = true
-                    }.background(Color.fromHex(Colors.mainColor.rawValue))
-                }
-                
-            }
+            MatchListScreen()
+                .environmentObject(model)
+                .environmentObject(appState)
+                .background(Color.fromHex(Colors.mainColor.rawValue))
+            
+//            NavigationView {
+//
+//                NavigationStack(path: $appState.routes) {
+//                    MatchListScreen().environmentObject(model).environmentObject(appState)
+//                        .navigationDestination(for: Route.self) { route in
+//                            switch route {
+//                            case .matchListScreen:
+//                                MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
+//                            case .splashScreen:
+//                                MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
+//                            case .detailedMachScreen:
+//                                MatchListScreen().background(Color.fromHex(Colors.mainColor.rawValue))
+//                            }
+//                        }
+//
+//                }.environmentObject(model)
+//                    .environmentObject(appState)
+//                    .onAppear {
+//                        isMatchListScreenActive = true
+//                    }.background(Color.fromHex(Colors.mainColor.rawValue))
+//            }
             
         }
     }

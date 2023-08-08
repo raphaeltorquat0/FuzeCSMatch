@@ -14,7 +14,7 @@ struct Constants {
     struct URLS {
         
         static var currentPage = 1
-        static var pageSize = 15
+        static var pageSize = 3
         
         static func getMatches() async throws -> URL {
             guard let getMatches = URL(string: "\(baseURLPath)/matches?per_page=\(pageSize)?filter=2023-08-05") else {

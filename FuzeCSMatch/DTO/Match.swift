@@ -2,7 +2,7 @@ import Foundation
 struct Match: Codable {
     struct Game: Codable {
         struct Winner: Codable {
-            let id: String?
+            let id: Int?
             let type: String
         }
         
@@ -13,12 +13,12 @@ struct Match: Codable {
         let finished: Bool
         let forfeit: Bool
         let id: Int
-        let length: String?
+        let length: Int?
         let match_id: Int
         let position: Int
         let status: String
-        let winner: Winner?
-        let winner_type: String
+        let winner: String?
+        let winner_type: String?
     }
     
     struct League: Codable {

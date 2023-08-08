@@ -13,39 +13,43 @@ struct TeamMemberImage: View {
     var body: some View {
         Image(imagedName)
             .resizable()
-            .frame(width: 100, height: 100)
-            .clipShape(RoundedRectangle(cornerRadius: 12)).offset(x: 200)
+            .frame(width: 80, height: 80)
+            .clipShape(RoundedRectangle(cornerRadius: 12)).offset(x: 150)
     }
 }
 
 struct TeamMemberDetails: View {
+    let teamMemberNickName: String
+    let teamMemberName: String
+    
     var body: some View {
         VStack(alignment: .trailing) {
-            Text("Member NickName")
+            Text(teamMemberNickName)
                 .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
-                .offset(x: -100)
-            Text("Member Name")
-                .foregroundColor(Color.fromHex(Colors.textSubTileColor.rawValue))
                 .offset(x: -120)
+            Text(teamMemberName)
+                .foregroundColor(Color.fromHex(Colors.textSubTileColor.rawValue))
+                .offset(x: -120, y: 10)
         }.frame(width: 200)
             .foregroundColor(Color.fromHex(Colors.mainColor.rawValue))
+        
             
     }
 }
 
 struct MockStore {
     static var Teams = [
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: "")
+        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "splash_logo", location: "", modified_at: "2023-08-03", name: "CS_GO", slug: "slug_0"),
+        Match.OpponentDetalhes(acronym: "22", id: 1, image_url: "splash_logo", location: "", modified_at: "2023-08-03", name: "CS_GO", slug: "slug_1"),
+        Match.OpponentDetalhes(acronym: "23", id: 2, image_url: "splash_logo", location: "", modified_at: "2023-08-03", name: "CS_GO", slug: "slug_2"),
+        Match.OpponentDetalhes(acronym: "24", id: 3, image_url: "splash_logo", location: "", modified_at: "2023-08-03", name: "CS_GO", slug: "slug_3"),
+        Match.OpponentDetalhes(acronym: "25", id: 4, image_url: "splash_logo", location: "", modified_at: "2023-08-03", name: "CS_GO", slug: "slug_4")
     ]
 }
 
 
 struct RowView: View {
-    let teamMembers: [Match.OpponentDetalhes]
+    var teamMembers: [Match.OpponentDetalhes]
     let width: CGFloat
     let height: CGFloat
     let horizontalSpacing: CGFloat
@@ -53,8 +57,8 @@ struct RowView: View {
     var body: some View {
         HStack(spacing: horizontalSpacing) {
             ForEach(teamMembers) { member in
-                TeamMemberImage(imagedName: member.image_url ?? "")
-                TeamMemberDetails()
+                TeamMemberImage(imagedName: (teamMembers.first!.image_url)!)
+                TeamMemberDetails(teamMemberNickName: teamMembers.first!.name, teamMemberName: teamMembers.first!.name)
             }
         }.padding()
     }
@@ -67,11 +71,12 @@ struct MatchDetailView: View {
     let height: CGFloat = 200
     
     let teamMembers: [Match.OpponentDetalhes] = [
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: ""),
-        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "", location: "", modified_at: "", name: "", slug: "")
+        Match.OpponentDetalhes(acronym: "21", id: 0, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO"),
+        Match.OpponentDetalhes(acronym: "22", id: 1, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO"),
+        Match.OpponentDetalhes(acronym: "23", id: 2, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO"),
+        Match.OpponentDetalhes(acronym: "24", id: 3, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO"),
+        Match.OpponentDetalhes(acronym: "25", id: 4, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO"),
+        Match.OpponentDetalhes(acronym: "25", id: 4, image_url: "splash_logo", location: "CS-GO", modified_at: "CS-GO", name: "CS-GO", slug: "CS-GO")
     ]
     
     
@@ -79,7 +84,7 @@ struct MatchDetailView: View {
     private func buildView(rowIndex: Int, geometry: GeometryProxy) -> RowView? {
         var rowItems = teamMembers
         for itemIndex in 0..<Int(itemPerRow) {
-            if rowIndex + itemIndex < rowItems.count {
+            if rowIndex + itemIndex < rowItems.count - 1 {
                 rowItems.append(teamMembers[rowIndex + itemIndex])
             }
         }
@@ -87,6 +92,7 @@ struct MatchDetailView: View {
             return RowView(teamMembers: teamMembers, width: getWidth(geometry: geometry), height: height, horizontalSpacing: CGFloat(horizontalSpacing))
         }
         return nil
+
     }
     
     func getWidth(geometry: GeometryProxy) -> CGFloat {
@@ -96,62 +102,39 @@ struct MatchDetailView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
-            ScrollView {
-                VStack(alignment: .leading,spacing: 8) {
-                    ForEach(0..<20) { i in
-                        if i % Int(itemPerRow) == 0 {
-                            buildView(rowIndex: i, geometry: geometry)
+        ScrollViewReader { scrollViewProxy in
+            HStack(spacing: 5) {
+                MatchCard(teamImage: "splash_logo", teamName: "team_A").frame(maxWidth: .infinity).offset(x: 40)
+                Text("VS")
+                    .foregroundColor(Color.fromHex(Colors.textSubTileColor.rawValue))
+                MatchCard(teamImage: "splash_logo", teamName: "team_A").frame(maxWidth: .infinity).offset(x: -40)
+            }.frame(height: 300)
+                .background(Color.fromHex(Colors.mainColor.rawValue))
+            VStack {
+                Text("HOJE")
+                    .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                    .offset(y: -50)
+            }
+                
+            Divider()
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack(alignment: .leading,spacing: 8) {
+                        ForEach(0..<teamMembers.count) { i in
+                            if i % Int(itemPerRow) == 0 {
+                                buildView(rowIndex: i, geometry: geometry)
+}
                         }
                     }
-                }
-            }
+                }.background(Color.fromHex(Colors.mainColor.rawValue))
+            }.scrollContentBackground(.hidden)
         }
-        
-//        List {
-//            ScrollViewReader { ScrollViewProxy in
-//                HStack(spacing: 5) {
-//                    MatchCard(teamImage: firstTeamImage, teamName: firstTeamName).frame(maxWidth: .infinity)
-//                    Text("VS")
-//                        .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
-//                        .font(.headline)
-//                    MatchCard(teamImage: secondTeamImage, teamName: secondTeamName).frame(maxWidth: .infinity)
-//                }.frame(height:300)
-//
-//                .background(Color.fromHex(Colors.mainColor.rawValue))
-//                .padding()
-//
-//                VStack(spacing: 5) {
-//                    HStack(spacing: 5) {
-//                        TeamMemberImage(imagedName: "splash_logo")
-//                        TeamMemberDetails()
-//                    }.background(Color.fromHex(Colors.mainColor.rawValue)).cornerRadius(15)
-//                }
-//
-//                VStack(spacing: 5) {
-//                    HStack(spacing: 5) {
-//                        TeamMemberImage(imagedName: "splash_logo")
-//                        TeamMemberDetails()
-//                    }.background(Color.fromHex(Colors.mainColor.rawValue)).cornerRadius(15)
-//                }
-//
-//                VStack(spacing: 5) {
-//                    HStack(spacing: 5) {
-//                        TeamMemberImage(imagedName: "splash_logo")
-//                        TeamMemberDetails()
-//                    }.background(Color.fromHex(Colors.mainColor.rawValue)).cornerRadius(15)
-//                }
-//            }
-//
-//
-//        }.background(Color.fromHex(Colors.mainColor.rawValue))
-//            .scrollContentBackground(.hidden)
     }
 }
 
 
 struct MatchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchDetailView()
+        MatchDetailView().foregroundColor(Color.fromHex(Colors.mainColor.rawValue))
     }
 }

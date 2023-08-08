@@ -12,9 +12,14 @@ struct MatchListScreen: View {
     @EnvironmentObject private var appState: AppState
     @State private var isPresented: Bool = false
     
-    private func fetchMatches() async throws {
-        do {
-            model.getAMatches = try await model.getmacthes()
+    private func fetchMatches()  {
+        Task {
+            do {
+                model.getAMatches = try await model.getMatchesFromJSON()
+                //try await model.getmacthes()
+            } catch {
+                print("Error fetching more matches: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -47,35 +52,42 @@ struct MatchListScreen: View {
     }
     
     var body: some View {
-        
-        VStack {
+        NavigationStack {
+            VStack(alignment: .listRowSeparatorLeading) {
+                Text("Partidas")
+                    .font(.custom("Roboto-bold", size: 50))
+                    .foregroundColor(.white)
+                    .padding(.top, 20)
+                if (model.getAMatches.isEmpty) {
+                    HStack {
+                        Text("There's no matches found")
+                    }
+                } else {
+                    List(model.getAMatches) { match in
+                        NavigationLink(value: match) {
+                            ScoreboardView(cMatch: match)
+                        }
+                        .listRowBackground(Color.fromHex(Colors.mainColor.rawValue))
+                    }
+                }
+            } .background(Color.fromHex(Colors.mainColor.rawValue))
+           
+        }
+        .background(Color.fromHex(Colors.mainColor.rawValue))
+        .navigationDestination(for: Match.self) { match in
+            MatchDetail(match: match)
+                .navigationBarTitle(Text("\(match.name ?? "Matches")"))
             
-            if model.getAMatches.isEmpty {
-                HStack {
-                    Text("There's no matches found")
-                }
-            } else {
-                List {
-                    ForEach(model.getAMatches) { match in
-                        ScoreboardView(cMatch: match).frame(height: 300).listRowInsets(EdgeInsets())
-                    }.background(Color.fromHex(Colors.mainColor.rawValue))
-                }
-            }
-        }
-        .task {
+            
+        }.task {
             do {
-                let matchesData = try await model.getmacthes()
-                DispatchQueue.main.async {
-                    model.getAMatches = matchesData
-                
-                }
-            } catch {
-                print("Error fetching matches from JSON: \(error.localizedDescription)")
+                fetchMatches()
             }
         }
-        
     }
 }
+
+
 
 struct MatchListScreenContainerView: View {
     @StateObject private var model = MatchesModel()
@@ -103,8 +115,7 @@ struct MatchListScreenContainerView: View {
 
 struct MatchListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MatchListScreen()
-        
+        MatchListScreen().environmentObject(MatchesModel())
     }
 }
 
