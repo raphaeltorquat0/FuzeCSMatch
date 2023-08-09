@@ -11,10 +11,26 @@ struct Constants {
     private static let baseURLPath = "https://api.pandascore.co/csgo"
     static let accessToken = "i7KIQ27D7Rn3_SKzAQtYcpQelZQIY_jLB99rqK9cmdcm97hNDQ4"
     
+    
+    struct CFRoboto {
+        static var robotoBlack = "Roboto-Black"
+        static var robotoBlackItalic = "Roboto-BlackItalic"
+        static var robotoBold = "Roboto-Bold"
+        static var robotoBoldItalic = "Roboto-BoldItalic"
+        static var robotoItalic = "Roboto-Italic"
+        static var robotoLight = "Roboto-Light"
+        static var robotoLightItalict = "Roboto-LightItalic"
+        static var robotoMedium = "Roboto-Medium"
+        static var robotoMediumItalic = "Roboto-MediumItalic"
+        static var robotoRegular = "Roboto-Regular"
+        static var robotoThin = "Roboto-Thin"
+        static var robotoThinItalic = "Roboto-ThinItalic"
+    }
+    
+    
     struct URLS {
-        
         static var currentPage = 1
-        static var pageSize = 3
+        static var pageSize = 7
         
         static func getMatches() async throws -> URL {
             guard let getMatches = URL(string: "\(baseURLPath)/matches?per_page=\(pageSize)?filter=2023-08-05") else {
@@ -37,7 +53,7 @@ struct Constants {
             return getRunningMatches
         }
         
-        static func getAMatch(matchID: String) async throws -> URL {
+        static func getAMatch(matchID: Int) async throws -> URL {
             guard let getAMatch = URL(string: "\(baseURLPath)/matches/\(matchID)") else  {
                 throw NetworkError.invalidURL
             }

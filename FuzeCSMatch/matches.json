@@ -51,7 +51,34 @@
           "location": "France",
           "modified_at": "2023-08-02T08:00:00Z",
           "name": "Team 3",
-          "slug": "team-3"
+          "slug": "team-3",
+          "players": [
+                {
+                  "name": "Johnson",
+                  "nickname": "Wattson",
+                  "image_url": ""
+                },
+                {
+                  "name": "Wattson",
+                  "nickname": "Johnson",
+                  "image_url": ""
+                },
+                {
+                  "name": "R2D2",
+                  "nickname": "Anakin",
+                  "image_url": ""
+                },
+                {
+                  "name": "Palpatine",
+                  "nickname": "Darth Sidious",
+                  "image_url": ""
+                },
+                {
+                  "name": "Maul",
+                  "nickname": "The Legend",
+                  "image_url": ""
+                }
+              ],
         },
         "type": "Team"
       },
@@ -63,10 +90,37 @@
           "location": "Brazil",
           "modified_at": "2023-08-02T08:00:00Z",
           "name": "Team 4",
-          "slug": "team-4"
+          "slug": "team-4",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
         },
         "type": "Team"
-      }
+      },
     ],
     "original_scheduled_at": "2023-08-09T13:30:00Z",
     "rescheduled": false,
@@ -134,637 +188,160 @@
     "videogame_version": "2.0.0",
     "winner": "T3",
     "winner_id": "103",
-    "winner_type": "Team"
+    "winner_type": "Team",
   },
   {
-    "begin_at": "2023-08-10T14:30:00Z",
-    "detailed_stats": true,
-    "draw": true,
-    "end_at": "2023-08-10T16:30:00Z",
-    "forfeit": false,
-    "game_advantage": "none",
-    "games": [
-      {
-        "begin_at": "2023-08-10T14:30:00Z",
-        "complete": true,
-        "detailed_stats": true,
-        "end_at": "2023-08-10T15:00:00Z",
-        "finished": true,
-        "forfeit": false,
-        "id": 3,
-        "length": 1800,
-        "match_id": 3,
-        "position": 1,
-        "status": "finished",
-        "winner": "draw",
-        "winner_type": "Team"
-      }
-    ],
-    "id": 3,
-    "league": {
-      "id": 125,
-      "image_url": "splash_logo",
-      "modified_at": "2023-08-03T08:00:00Z",
-      "name": "Different League",
-      "slug": "different-league",
-      "url": "https://example.com/different-league"
-    },
-    "league_id": 125,
-    "live": {
-      "opens_at": "2023-08-10T13:00:00Z",
-      "supported": true,
-      "url": "https://example.com/live"
-    },
-    "match_type": "best_of_1",
-    "modified_at": "2023-08-03T10:00:00Z",
-    "name": "Group Stage",
-    "number_of_games": 1,
-    "opponents": [
-      {
-        "opponent": {
-          "acronym": "T5",
-          "id": 105,
-          "image_url": "splash_logo",
-          "location": "Germany",
-          "modified_at": "2023-08-03T08:00:00Z",
-          "name": "Team 5",
-          "slug": "team-5"
-        },
-        "type": "Team"
-      },
-      {
-        "opponent": {
-          "acronym": "T6",
-          "id": 106,
-          "image_url": "splash_logo",
-          "location": "China",
-          "modified_at": "2023-08-03T08:00:00Z",
-          "name": "Team 6",
-          "slug": "team-6"
-        },
-        "type": "Team"
-      }
-    ],
-    "original_scheduled_at": "2023-08-10T14:30:00Z",
-    "rescheduled": false,
-    "results": [
-      {
-        "score": 1,
-        "teamId": 105
-      },
-      {
-        "score": 1,
-        "teamId": 106
-      }
-    ],
-    "scheduled_at": "2023-08-10T14:30:00Z",
-    "serie": {
-      "begin_at": "2023-08-01T00:00:00Z",
-      "end_at": "2023-09-01T00:00:00Z",
-      "full_name": "2023 Summer Season",
-      "id": 5,
-      "league_id": 125,
-      "modified_at": "2023-08-03T08:00:00Z",
-      "name": "Summer 2023",
-      "season": "Summer",
-      "slug": "summer-2023",
-      "winner_id": "draw",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "serie_id": 5,
-    "slug": "group-stage",
-    "status": "finished",
-    "streams_list": [
-      {
-        "embedURL": "https://example.com/embed",
-        "language": "en",
-        "main": true,
-        "official": true,
-        "rawURL": "https://example.com/stream"
-      }
-    ],
-    "tournament": {
-      "begin_at": "2023-07-01T00:00:00Z",
-      "detailed_stats": true,
-      "end_at": "2023-09-01T00:00:00Z",
-      "has_bracket": true,
-      "id": 12,
-      "league_id": 125,
-      "live_supported": true,
-      "modified_at": "2023-08-03T08:00:00Z",
-      "name": "Different Tournament",
-      "prizepool": "$200,000",
-      "serie_id": 5,
-      "slug": "different-tournament",
-      "tier": "Major",
-      "winner_id": "draw",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "tournament_id": 12,
-    "videogame": {
-      "id": 3,
-      "name": "Yet Another Game",
-      "slug": "yet-another-game"
-    },
-    "videogame_version": "3.0.0",
-    "winner": "draw",
-    "winner_id": "draw",
-    "winner_type": "Team"
-  },
-  {
-    "begin_at": "2023-08-11T16:00:00Z",
-    "detailed_stats": false,
-    "draw": false,
-    "end_at": "2023-08-11T18:00:00Z",
-    "forfeit": true,
-    "game_advantage": "none",
-    "games": [
-      {
-        "begin_at": "2023-08-11T16:00:00Z",
-        "complete": true,
-        "detailed_stats": false,
-        "end_at": "2023-08-11T16:30:00Z",
-        "finished": true,
-        "forfeit": true,
-        "id": 4,
-        "length": 1800,
-        "match_id": 4,
-        "position": 1,
-        "status": "finished",
-        "winner": "blue",
-        "winner_type": "Team"
-      }
-    ],
-    "id": 4,
-    "league": {
-      "id": 126,
-      "image_url": "splash_logo",
-      "modified_at": "2023-08-04T08:00:00Z",
-      "name": "Special League",
-      "slug": "special-league",
-      "url": "https://example.com/special-league"
-    },
-    "league_id": 126,
-    "live": {
-      "opens_at": "2023-08-11T15:00:00Z",
-      "supported": false,
-      "url": null
-    },
-    "match_type": "best_of_1",
-    "modified_at": "2023-08-04T10:00:00Z",
-    "name": "Forfeit Match",
-    "number_of_games": 1,
-    "opponents": [
-      {
-        "opponent": {
-          "acronym": "T7",
-          "id": 107,
-          "image_url": "splash_logo",
-          "location": "Japan",
-          "modified_at": "2023-08-04T08:00:00Z",
-          "name": "Team 7",
-          "slug": "team-7"
-        },
-        "type": "Team"
-      },
-      {
-        "opponent": {
-          "acronym": "T8",
-          "id": 108,
-          "image_url": "splash_logo",
-          "location": "Australia",
-          "modified_at": "2023-08-04T08:00:00Z",
-          "name": "Team 8",
-          "slug": "team-8"
-        },
-        "type": "Team"
-      }
-    ],
-    "original_scheduled_at": "2023-08-11T16:00:00Z",
-    "rescheduled": false,
-    "results": [
-      {
-        "score": 0,
-        "teamId": 107
-      },
-      {
-        "score": 1,
-        "teamId": 108
-      }
-    ],
-    "scheduled_at": "2023-08-11T16:00:00Z",
-    "serie": {
-      "begin_at": "2023-08-01T00:00:00Z",
-      "end_at": "2023-09-01T00:00:00Z",
-      "full_name": "2023 Summer Season",
-      "id": 5,
-      "league_id": 126,
-      "modified_at": "2023-08-04T08:00:00Z",
-      "name": "Summer 2023",
-      "season": "Summer",
-      "slug": "summer-2023",
-      "winner_id": "blue",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "serie_id": 5,
-    "slug": "forfeit-match",
-    "status": "finished",
-    "streams_list": [],
-    "tournament": {
-      "begin_at": "2023-07-01T00:00:00Z",
-      "detailed_stats": false,
-      "end_at": "2023-09-01T00:00:00Z",
-      "has_bracket": false,
-      "id": 13,
-      "league_id": 126,
-      "live_supported": false,
-      "modified_at": "2023-08-04T08:00:00Z",
-      "name": "Special Tournament",
-      "prizepool": "$50,000",
-      "serie_id": 5,
-      "slug": "special-tournament",
-      "tier": "Minor",
-      "winner_id": "blue",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "tournament_id": 13,
-    "videogame": {
-      "id": 4,
-      "name": "Exclusive Game",
-      "slug": "exclusive-game"
-    },
-    "videogame_version": "4.0.0",
-    "winner": "T7",
-    "winner_id": "107",
-    "winner_type": "Team"
-  },
-  {
-    "begin_at": "2023-08-12T17:00:00Z",
+    "begin_at": "2023-08-09T13:30:00Z",
     "detailed_stats": true,
     "draw": false,
-    "end_at": "2023-08-12T19:00:00Z",
-    "forfeit": false,
-    "game_advantage": "away",
-    "games": [
-      {
-        "begin_at": "2023-08-12T17:00:00Z",
-        "complete": false,
-        "detailed_stats": true,
-        "end_at": null,
-        "finished": false,
-        "forfeit": false,
-        "id": 5,
-        "length": 0,
-        "match_id": 5,
-        "position": 1,
-        "status": "not_started",
-        "winner": null,
-        "winner_type": null
-      }
-    ],
-    "id": 5,
-    "league": {
-      "id": 127,
-      "image_url": "splash_logo",
-      "modified_at": "2023-08-05T08:00:00Z",
-      "name": "Exclusive League",
-      "slug": "exclusive-league",
-      "url": "https://example.com/exclusive-league"
-    },
-    "league_id": 127,
-    "live": {
-      "opens_at": "2023-08-12T16:00:00Z",
-      "supported": true,
-      "url": "https://example.com/live"
-    },
-    "match_type": "best_of_3",
-    "modified_at": "2023-08-05T10:00:00Z",
-    "name": "Quarterfinals",
-    "number_of_games": 3,
-    "opponents": [
-      {
-        "opponent": {
-          "acronym": "T9",
-          "id": 109,
-          "image_url": "splash_logo",
-          "location": "Russia",
-          "modified_at": "2023-08-05T08:00:00Z",
-          "name": "Team 9",
-          "slug": "team-9"
-        },
-        "type": "Team"
-      },
-      {
-        "opponent": {
-          "acronym": "T10",
-          "id": 110,
-          "image_url": "splash_logo",
-          "location": "Canada",
-          "modified_at": "2023-08-05T08:00:00Z",
-          "name": "Team 10",
-          "slug": "team-10"
-        },
-        "type": "Team"
-      }
-    ],
-    "original_scheduled_at": "2023-08-12T17:00:00Z",
-    "rescheduled": false,
-    "results": [],
-    "scheduled_at": "2023-08-12T17:00:00Z",
-    "serie": {
-      "begin_at": "2023-08-01T00:00:00Z",
-      "end_at": "2023-09-01T00:00:00Z",
-      "full_name": "2023 Summer Season",
-      "id": 5,
-      "league_id": 127,
-      "modified_at": "2023-08-05T08:00:00Z",
-      "name": "Summer 2023",
-      "season": "Summer",
-      "slug": "summer-2023",
-      "winner_id": null,
-      "winner_type": null,
-      "year": 2023
-    },
-    "serie_id": 5,
-    "slug": "quarterfinals",
-    "status": "not_started",
-    "streams_list": [
-      {
-        "embedURL": "https://example.com/embed",
-        "language": "en",
-        "main": true,
-        "official": true,
-        "rawURL": "https://example.com/stream"
-      }
-    ],
-    "tournament": {
-      "begin_at": "2023-07-01T00:00:00Z",
-      "detailed_stats": true,
-      "end_at": "2023-09-01T00:00:00Z",
-      "has_bracket": true,
-      "id": 14,
-      "league_id": 127,
-      "live_supported": true,
-      "modified_at": "2023-08-05T08:00:00Z",
-      "name": "Exclusive Tournament",
-      "prizepool": "$250,000",
-      "serie_id": 5,
-      "slug": "exclusive-tournament",
-      "tier": "Major",
-      "winner_id": null,
-      "winner_type": null,
-      "year": 2023
-    },
-    "tournament_id": 14,
-    "videogame": {
-      "id": 5,
-      "name": "Elite Game",
-      "slug": "elite-game"
-    },
-    "videogame_version": "5.0.0",
-    "winner": null,
-    "winner_id": null,
-    "winner_type": null
-  },
-  {
-    "begin_at": "2023-08-13T18:30:00Z",
-    "detailed_stats": false,
-    "draw": true,
-    "end_at": "2023-08-13T20:30:00Z",
-    "forfeit": false,
-    "game_advantage": "none",
-    "games": [
-      {
-        "begin_at": "2023-08-13T18:30:00Z",
-        "complete": true,
-        "detailed_stats": false,
-        "end_at": "2023-08-13T19:00:00Z",
-        "finished": true,
-        "forfeit": false,
-        "id": 6,
-        "length": 1800,
-        "match_id": 6,
-        "position": 1,
-        "status": "finished",
-        "winner": "draw",
-        "winner_type": "Team"
-      }
-    ],
-    "id": 6,
-    "league": {
-      "id": 128,
-      "image_url": "splash_logo",
-      "modified_at": "2023-08-06T08:00:00Z",
-      "name": "Super League",
-      "slug": "super-league",
-      "url": "https://example.com/super-league"
-    },
-    "league_id": 128,
-    "live": {
-      "opens_at": "2023-08-13T17:00:00Z",
-      "supported": true,
-      "url": "https://example.com/live"
-    },
-    "match_type": "best_of_1",
-    "modified_at": "2023-08-06T10:00:00Z",
-    "name": "Tiebreaker",
-    "number_of_games": 1,
-    "opponents": [
-      {
-        "opponent": {
-          "acronym": "T11",
-          "id": 111,
-          "image_url": "splash_logo",
-          "location": "Spain",
-          "modified_at": "2023-08-06T08:00:00Z",
-          "name": "Team 11",
-          "slug": "team-11"
-        },
-        "type": "Team"
-      },
-      {
-        "opponent": {
-          "acronym": "T12",
-          "id": 112,
-          "image_url": "splash_logo",
-          "location": "Italy",
-          "modified_at": "2023-08-06T08:00:00Z",
-          "name": "Team 12",
-          "slug": "team-12"
-        },
-        "type": "Team"
-      }
-    ],
-    "original_scheduled_at": "2023-08-13T18:30:00Z",
-    "rescheduled": false,
-    "results": [
-      {
-        "score": 1,
-        "teamId": 111
-      },
-      {
-        "score": 1,
-        "teamId": 112
-      }
-    ],
-    "scheduled_at": "2023-08-13T18:30:00Z",
-    "serie": {
-      "begin_at": "2023-08-01T00:00:00Z",
-      "end_at": "2023-09-01T00:00:00Z",
-      "full_name": "2023 Summer Season",
-      "id": 5,
-      "league_id": 128,
-      "modified_at": "2023-08-06T08:00:00Z",
-      "name": "Summer 2023",
-      "season": "Summer",
-      "slug": "summer-2023",
-      "winner_id": "draw",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "serie_id": 5,
-    "slug": "tiebreaker",
-    "status": "finished",
-    "streams_list": [
-      {
-        "embedURL": "https://example.com/embed",
-        "language": "en",
-        "main": true,
-        "official": true,
-        "rawURL": "https://example.com/stream"
-      }
-    ],
-    "tournament": {
-      "begin_at": "2023-07-01T00:00:00Z",
-      "detailed_stats": false,
-      "end_at": "2023-09-01T00:00:00Z",
-      "has_bracket": false,
-      "id": 15,
-      "league_id": 128,
-      "live_supported": true,
-      "modified_at": "2023-08-06T08:00:00Z",
-      "name": "Super Tournament",
-      "prizepool": "$75,000",
-      "serie_id": 5,
-      "slug": "super-tournament",
-      "tier": "Minor",
-      "winner_id": "draw",
-      "winner_type": "Team",
-      "year": 2023
-    },
-    "tournament_id": 15,
-    "videogame": {
-      "id": 6,
-      "name": "Superior Game",
-      "slug": "superior-game"
-    },
-    "videogame_version": "6.0.0",
-    "winner": "T11",
-    "winner_id": "111",
-    "winner_type": "Team"
-  },
-  {
-    "begin_at": "2023-08-14T20:00:00Z",
-    "detailed_stats": true,
-    "draw": false,
-    "end_at": "2023-08-14T22:00:00Z",
+    "end_at": "2023-08-09T15:30:00Z",
     "forfeit": false,
     "game_advantage": "home",
     "games": [
       {
-        "begin_at": "2023-08-14T20:00:00Z",
+        "begin_at": "2023-08-09T13:30:00Z",
         "complete": true,
         "detailed_stats": true,
-        "end_at": "2023-08-14T20:30:00Z",
+        "end_at": "2023-08-09T14:00:00Z",
         "finished": true,
         "forfeit": false,
-        "id": 7,
+        "id": 2,
         "length": 1800,
-        "match_id": 7,
+        "match_id": 2,
         "position": 1,
         "status": "finished",
         "winner": "red",
         "winner_type": "Team"
       }
     ],
-    "id": 7,
+    "id": 2,
     "league": {
-      "id": 129,
+      "id": 124,
       "image_url": "splash_logo",
-      "modified_at": "2023-08-07T08:00:00Z",
-      "name": "Ultimate League",
-      "slug": "ultimate-league",
-      "url": "https://example.com/ultimate-league"
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Another League",
+      "slug": "another-league",
+      "url": "https://example.com/another-league"
     },
-    "league_id": 129,
+    "league_id": 124,
     "live": {
-      "opens_at": "2023-08-14T19:00:00Z",
+      "opens_at": "2023-08-09T12:00:00Z",
       "supported": true,
       "url": "https://example.com/live"
     },
-    "match_type": "best_of_1",
-    "modified_at": "2023-08-07T10:00:00Z",
-    "name": "Showmatch",
-    "number_of_games": 1,
+    "match_type": "best_of_3",
+    "modified_at": "2023-08-02T10:00:00Z",
+    "name": "Semifinals",
+    "number_of_games": 3,
     "opponents": [
       {
         "opponent": {
-          "acronym": "T13",
-          "id": 113,
+          "acronym": "T3",
+          "id": 103,
           "image_url": "splash_logo",
-          "location": "Netherlands",
-          "modified_at": "2023-08-07T08:00:00Z",
-          "name": "Team 13",
-          "slug": "team-13"
+          "location": "France",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 3",
+          "slug": "team-3",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
         },
         "type": "Team"
       },
       {
         "opponent": {
-          "acronym": "T14",
-          "id": 114,
+          "acronym": "T4",
+          "id": 104,
           "image_url": "splash_logo",
-          "location": "France",
-          "modified_at": "2023-08-07T08:00:00Z",
-          "name": "Team 14",
-          "slug": "team-14"
+          "location": "Brazil",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 4",
+          "slug": "team-4",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
         },
         "type": "Team"
-      }
+      },
     ],
-    "original_scheduled_at": "2023-08-14T20:00:00Z",
+    "original_scheduled_at": "2023-08-09T13:30:00Z",
     "rescheduled": false,
     "results": [
       {
         "score": 16,
-        "teamId": 113
+        "teamId": 103
       },
       {
-        "score": 12,
-        "teamId": 114
+        "score": 13,
+        "teamId": 104
       }
     ],
-    "scheduled_at": "2023-08-14T20:00:00Z",
+    "scheduled_at": "2023-08-09T13:30:00Z",
     "serie": {
       "begin_at": "2023-08-01T00:00:00Z",
       "end_at": "2023-09-01T00:00:00Z",
       "full_name": "2023 Summer Season",
       "id": 5,
-      "league_id": 129,
-      "modified_at": "2023-08-07T08:00:00Z",
+      "league_id": 124,
+      "modified_at": "2023-08-02T08:00:00Z",
       "name": "Summer 2023",
       "season": "Summer",
       "slug": "summer-2023",
-      "winner_id": "red",
+      "winner_id": "103",
       "winner_type": "Team",
       "year": 2023
     },
     "serie_id": 5,
-    "slug": "showmatch",
+    "slug": "semifinals",
     "status": "finished",
     "streams_list": [
       {
@@ -779,29 +356,602 @@
       "begin_at": "2023-07-01T00:00:00Z",
       "detailed_stats": true,
       "end_at": "2023-09-01T00:00:00Z",
-      "has_bracket": false,
-      "id": 16,
-      "league_id": 129,
+      "has_bracket": true,
+      "id": 11,
+      "league_id": 124,
       "live_supported": true,
-      "modified_at": "2023-08-07T08:00:00Z",
-      "name": "Ultimate Tournament",
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer Tournament",
       "prizepool": "$150,000",
       "serie_id": 5,
-      "slug": "ultimate-tournament",
+      "slug": "summer-tournament",
       "tier": "Major",
-      "winner_id": "red",
+      "winner_id": "103",
       "winner_type": "Team",
       "year": 2023
     },
-    "tournament_id": 16,
+    "tournament_id": 11,
     "videogame": {
-      "id": 7,
-      "name": "Supreme Game",
-      "slug": "supreme-game"
+      "id": 2,
+      "name": "Another Game",
+      "slug": "another-game"
     },
-    "videogame_version": "7.0.0",
-    "winner": "T13",
-    "winner_id": "113",
-    "winner_type": "Team"
-  }
+    "videogame_version": "2.0.0",
+    "winner": "T3",
+    "winner_id": "103",
+    "winner_type": "Team",
+  },
+  {
+    "begin_at": "2023-08-09T13:30:00Z",
+    "detailed_stats": true,
+    "draw": false,
+    "end_at": "2023-08-09T15:30:00Z",
+    "forfeit": false,
+    "game_advantage": "home",
+    "games": [
+      {
+        "begin_at": "2023-08-09T13:30:00Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2023-08-09T14:00:00Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 2,
+        "length": 1800,
+        "match_id": 2,
+        "position": 1,
+        "status": "finished",
+        "winner": "red",
+        "winner_type": "Team"
+      }
+    ],
+    "id": 2,
+    "league": {
+      "id": 124,
+      "image_url": "splash_logo",
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Another League",
+      "slug": "another-league",
+      "url": "https://example.com/another-league"
+    },
+    "league_id": 124,
+    "live": {
+      "opens_at": "2023-08-09T12:00:00Z",
+      "supported": true,
+      "url": "https://example.com/live"
+    },
+    "match_type": "best_of_3",
+    "modified_at": "2023-08-02T10:00:00Z",
+    "name": "Semifinals",
+    "number_of_games": 3,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": "T3",
+          "id": 103,
+          "image_url": "splash_logo",
+          "location": "France",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 3",
+          "slug": "team-3",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": "T4",
+          "id": 104,
+          "image_url": "splash_logo",
+          "location": "Brazil",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 4",
+          "slug": "team-4",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+    ],
+    "original_scheduled_at": "2023-08-09T13:30:00Z",
+    "rescheduled": false,
+    "results": [
+      {
+        "score": 16,
+        "teamId": 103
+      },
+      {
+        "score": 13,
+        "teamId": 104
+      }
+    ],
+    "scheduled_at": "2023-08-09T13:30:00Z",
+    "serie": {
+      "begin_at": "2023-08-01T00:00:00Z",
+      "end_at": "2023-09-01T00:00:00Z",
+      "full_name": "2023 Summer Season",
+      "id": 5,
+      "league_id": 124,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer 2023",
+      "season": "Summer",
+      "slug": "summer-2023",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "serie_id": 5,
+    "slug": "semifinals",
+    "status": "finished",
+    "streams_list": [
+      {
+        "embedURL": "https://example.com/embed",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "rawURL": "https://example.com/stream"
+      }
+    ],
+    "tournament": {
+      "begin_at": "2023-07-01T00:00:00Z",
+      "detailed_stats": true,
+      "end_at": "2023-09-01T00:00:00Z",
+      "has_bracket": true,
+      "id": 11,
+      "league_id": 124,
+      "live_supported": true,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer Tournament",
+      "prizepool": "$150,000",
+      "serie_id": 5,
+      "slug": "summer-tournament",
+      "tier": "Major",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "tournament_id": 11,
+    "videogame": {
+      "id": 2,
+      "name": "Another Game",
+      "slug": "another-game"
+    },
+    "videogame_version": "2.0.0",
+    "winner": "T3",
+    "winner_id": "103",
+    "winner_type": "Team",
+  },
+  {
+    "begin_at": "2023-08-09T13:30:00Z",
+    "detailed_stats": true,
+    "draw": false,
+    "end_at": "2023-08-09T15:30:00Z",
+    "forfeit": false,
+    "game_advantage": "home",
+    "games": [
+      {
+        "begin_at": "2023-08-09T13:30:00Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2023-08-09T14:00:00Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 2,
+        "length": 1800,
+        "match_id": 2,
+        "position": 1,
+        "status": "finished",
+        "winner": "red",
+        "winner_type": "Team"
+      }
+    ],
+    "id": 2,
+    "league": {
+      "id": 124,
+      "image_url": "splash_logo",
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Another League",
+      "slug": "another-league",
+      "url": "https://example.com/another-league"
+    },
+    "league_id": 124,
+    "live": {
+      "opens_at": "2023-08-09T12:00:00Z",
+      "supported": true,
+      "url": "https://example.com/live"
+    },
+    "match_type": "best_of_3",
+    "modified_at": "2023-08-02T10:00:00Z",
+    "name": "Semifinals",
+    "number_of_games": 3,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": "T3",
+          "id": 103,
+          "image_url": "splash_logo",
+          "location": "France",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 3",
+          "slug": "team-3",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": "T4",
+          "id": 104,
+          "image_url": "splash_logo",
+          "location": "Brazil",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 4",
+          "slug": "team-4",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+    ],
+    "original_scheduled_at": "2023-08-09T13:30:00Z",
+    "rescheduled": false,
+    "results": [
+      {
+        "score": 16,
+        "teamId": 103
+      },
+      {
+        "score": 13,
+        "teamId": 104
+      }
+    ],
+    "scheduled_at": "2023-08-09T13:30:00Z",
+    "serie": {
+      "begin_at": "2023-08-01T00:00:00Z",
+      "end_at": "2023-09-01T00:00:00Z",
+      "full_name": "2023 Summer Season",
+      "id": 5,
+      "league_id": 124,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer 2023",
+      "season": "Summer",
+      "slug": "summer-2023",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "serie_id": 5,
+    "slug": "semifinals",
+    "status": "finished",
+    "streams_list": [
+      {
+        "embedURL": "https://example.com/embed",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "rawURL": "https://example.com/stream"
+      }
+    ],
+    "tournament": {
+      "begin_at": "2023-07-01T00:00:00Z",
+      "detailed_stats": true,
+      "end_at": "2023-09-01T00:00:00Z",
+      "has_bracket": true,
+      "id": 11,
+      "league_id": 124,
+      "live_supported": true,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer Tournament",
+      "prizepool": "$150,000",
+      "serie_id": 5,
+      "slug": "summer-tournament",
+      "tier": "Major",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "tournament_id": 11,
+    "videogame": {
+      "id": 2,
+      "name": "Another Game",
+      "slug": "another-game"
+    },
+    "videogame_version": "2.0.0",
+    "winner": "T3",
+    "winner_id": "103",
+    "winner_type": "Team",
+  },
+  {
+    "begin_at": "2023-08-09T13:30:00Z",
+    "detailed_stats": true,
+    "draw": false,
+    "end_at": "2023-08-09T15:30:00Z",
+    "forfeit": false,
+    "game_advantage": "home",
+    "games": [
+      {
+        "begin_at": "2023-08-09T13:30:00Z",
+        "complete": true,
+        "detailed_stats": true,
+        "end_at": "2023-08-09T14:00:00Z",
+        "finished": true,
+        "forfeit": false,
+        "id": 2,
+        "length": 1800,
+        "match_id": 2,
+        "position": 1,
+        "status": "finished",
+        "winner": "red",
+        "winner_type": "Team"
+      }
+    ],
+    "id": 2,
+    "league": {
+      "id": 124,
+      "image_url": "splash_logo",
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Another League",
+      "slug": "another-league",
+      "url": "https://example.com/another-league"
+    },
+    "league_id": 124,
+    "live": {
+      "opens_at": "2023-08-09T12:00:00Z",
+      "supported": true,
+      "url": "https://example.com/live"
+    },
+    "match_type": "best_of_3",
+    "modified_at": "2023-08-02T10:00:00Z",
+    "name": "Semifinals",
+    "number_of_games": 3,
+    "opponents": [
+      {
+        "opponent": {
+          "acronym": "T3",
+          "id": 103,
+          "image_url": "splash_logo",
+          "location": "France",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 3",
+          "slug": "team-3",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+      {
+        "opponent": {
+          "acronym": "T4",
+          "id": 104,
+          "image_url": "splash_logo",
+          "location": "Brazil",
+          "modified_at": "2023-08-02T08:00:00Z",
+          "name": "Team 4",
+          "slug": "team-4",
+          "players": [
+                {
+                  "name": "Player 1",
+                  "nickname": "Nick1",
+                  "image_url": "https://example.com/player1.jpg"
+                },
+                {
+                  "name": "Player 2",
+                  "nickname": "Nick2",
+                  "image_url": "https://example.com/player2.jpg"
+                },
+                {
+                  "name": "Player 3",
+                  "nickname": "Nick3",
+                  "image_url": "https://example.com/player3.jpg"
+                },
+                {
+                  "name": "Player 4",
+                  "nickname": "Nick4",
+                  "image_url": "https://example.com/player4.jpg"
+                },
+                {
+                  "name": "Player 5",
+                  "nickname": "Nick5",
+                  "image_url": "https://example.com/player5.jpg"
+                }
+              ],
+        },
+        "type": "Team"
+      },
+    ],
+    "original_scheduled_at": "2023-08-09T13:30:00Z",
+    "rescheduled": false,
+    "results": [
+      {
+        "score": 16,
+        "teamId": 103
+      },
+      {
+        "score": 13,
+        "teamId": 104
+      }
+    ],
+    "scheduled_at": "2023-08-09T13:30:00Z",
+    "serie": {
+      "begin_at": "2023-08-01T00:00:00Z",
+      "end_at": "2023-09-01T00:00:00Z",
+      "full_name": "2023 Summer Season",
+      "id": 5,
+      "league_id": 124,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer 2023",
+      "season": "Summer",
+      "slug": "summer-2023",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "serie_id": 5,
+    "slug": "semifinals",
+    "status": "finished",
+    "streams_list": [
+      {
+        "embedURL": "https://example.com/embed",
+        "language": "en",
+        "main": true,
+        "official": true,
+        "rawURL": "https://example.com/stream"
+      }
+    ],
+    "tournament": {
+      "begin_at": "2023-07-01T00:00:00Z",
+      "detailed_stats": true,
+      "end_at": "2023-09-01T00:00:00Z",
+      "has_bracket": true,
+      "id": 11,
+      "league_id": 124,
+      "live_supported": true,
+      "modified_at": "2023-08-02T08:00:00Z",
+      "name": "Summer Tournament",
+      "prizepool": "$150,000",
+      "serie_id": 5,
+      "slug": "summer-tournament",
+      "tier": "Major",
+      "winner_id": "103",
+      "winner_type": "Team",
+      "year": 2023
+    },
+    "tournament_id": 11,
+    "videogame": {
+      "id": 2,
+      "name": "Another Game",
+      "slug": "another-game"
+    },
+    "videogame_version": "2.0.0",
+    "winner": "T3",
+    "winner_id": "103",
+    "winner_type": "Team",
+  },
 ]

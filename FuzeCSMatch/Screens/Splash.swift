@@ -1,14 +1,7 @@
-//
-//  Splash.swift
-//  FuzeCSMatch
-//
-//  Created by Raphael Buchler on 03/08/23.
-//
-
 import SwiftUI
 
-struct SplashScreen: View {
-    @StateObject private var appState = AppState()
+struct SplashView: View {
+    @Binding var isMatchListPresented: Bool
     
     var body: some View {
         VStack {
@@ -17,12 +10,17 @@ struct SplashScreen: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
         }
-        .background(Color.blue)
-        .edgesIgnoringSafeArea(.all)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.fromHex(Colors.secondaryColor.rawValue))
+        .ignoresSafeArea()
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2 ) {
-                appState.routes = [.matchListScreen]
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isMatchListPresented = true
             }
+        }
+        .fullScreenCover(isPresented: $isMatchListPresented) {
+            MatchListScreen()
+                .background(Color.fromHex(Colors.secondaryColor.rawValue))
         }
     }
 }

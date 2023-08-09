@@ -8,8 +8,8 @@
 import Foundation
 
 enum Route: Hashable {
-    case matchListScreen
     case splashScreen
+    case matchListScreen
     case detailedMachScreen(Match)
 }
 

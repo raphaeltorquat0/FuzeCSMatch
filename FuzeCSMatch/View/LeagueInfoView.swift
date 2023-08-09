@@ -10,21 +10,20 @@ import SwiftUI
 struct LeagueInfoView: View {
     var leagueName: String
     var leagueImage: String
-    @State private var image: UIImage? = UIImage(contentsOfFile: "splash_logo")
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 10) {
-                Image(leagueImage)
-                HStack(spacing: 10) {
-                    Text(leagueName)
-                        .font(.custom("Roboto-Thin", size: 10))
-                        .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
-                        .frame(width: .infinity, height: .infinity, alignment: .bottomLeading)
-                }
-            }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: 200)
-            .padding(10)
+        HStack(alignment: .center, spacing: 10) {
+            RemoteImage(url: leagueImage)
+                .frame(width: 30, height: 30)
+                .aspectRatio(contentMode: .fit)
+                .background(Color.fromHex(Colors.mainColor.rawValue))
+                .clipShape(Circle())
+            Text(leagueName)
+                    .font(.custom(Constants.CFRoboto.robotoMedium, size: 10))
+                    .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                    .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 5)
     }
 }

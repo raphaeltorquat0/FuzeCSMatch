@@ -46,8 +46,8 @@ class MatchesModel: ObservableObject {
         return getUpcomingMatches
     }
     
-    func getDetailFromMatch(_ matchID: Int) async throws -> Match? {
-        let resource = try await PaginatedResource(url: Constants.URLS.getMatchDetails(matchID), modelType: Match.self)
+    func getDetailFromMatch(_ matchID: Int = 822256) async throws -> Match? {
+        let resource = try await PaginatedResource(url: Constants.URLS.getAMatch(matchID: 822256), modelType: Match.self)
         let matchDetail = try await httpClient.load(resource)
         getMatchDetail = matchDetail.items
         return getMatchDetail
@@ -68,7 +68,7 @@ class MatchesModel: ObservableObject {
         }
     }
     
-    private func readLocalFile(forName name: String) -> Data? {
+    public func readLocalFile(forName name: String) -> Data? {
         do {
             if let fileURL = Bundle.main.url(forResource: name, withExtension: "json") {
                 let data = try Data(contentsOf: fileURL)
