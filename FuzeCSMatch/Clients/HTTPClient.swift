@@ -38,7 +38,6 @@ struct HTTPClient {
         }
         
         guard httpResponse.statusCode == 200 else {
-            // Handle other status codes, e.g., 404, 500, etc.
             throw NetworkError.ServerError(httpResponse.description)
         }
         
