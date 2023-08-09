@@ -1,50 +1,51 @@
 import SwiftUI
 
+struct MatchDivider: View {
+    var body: some View {
+        Divider()
+            .frame(maxWidth: 200)
+    }
+}
+
 struct ScoreboardView: View {
-    var opponents: [Opponent]
-    var cMatch: Match?
+    private let matchUseCases: MatchUseCase = MatchUseCase()
+    var cMatch: Match
     
-    
-    private func getOpponents(_ opponents:[Opponent]) async throws -> [Opponent] {
-        guard !opponents.isEmpty else {
-            throw NetworkError.badRequest
-        }
-        
-        return opponents
+    private func getAMatchValue(_ match: Match) async throws {
+        try await matchUseCases.getAllValues([match])
+        print(matchUseCases)
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollViewReader { ScrollViewProxy in
-                LazyVStack(spacing: 10) {
-                    ZStack(alignment: .center) {
-                        HStack(alignment: .center)  {
-                            MatchCard(opponent: opponents.first)
-                            Text("vs")
-                            MatchCard(opponent: opponents.last)
-                        }
-                        .frame(height: max(geometry.size.height, 300))
-                        .offset(y: -50)
-                        Divider()
-                        VStack(alignment: .leading) {
-                            Spacer()
-                            LeagueInfoView(cMatch: cMatch)
-                                .frame(height: 80)
-                        }
-                        .padding(.bottom, 10)
+        VStack {
+            
+            VStack {
+                HStack {
+                    if let firstOpponent = cMatch.opponents.first?.opponent,
+                       let secondOpponent = cMatch.opponents.last?.opponent {
+                        MatchCard(teamImage: firstOpponent.image_url ?? "", teamName: firstOpponent.name)
+                        Text("VS")
+                            .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                            .font(.custom(Constants.CFRoboto.robotoBold, size: 15))
+                            .padding(.horizontal, 10)
+                        MatchCard(teamImage: secondOpponent.image_url ?? "", teamName: secondOpponent.name)
+                            
                     }
-                    .padding()
-                    .cornerRadius(10)
-                    .frame(maxWidth:.infinity, alignment: .center)
                 }
+                .background(Color.fromHex(Colors.mainColor.rawValue))
+                    .padding(10)
             }
-        }
-        .task {
-            do {
-                let _ = try await getOpponents(opponents)
-            } catch  {
-                
-            }
-        }
+            Divider()
+                .background(Color.white)
+                .frame(height: 3)
+                .frame(maxWidth: .infinity)
+                .edgesIgnoringSafeArea(.horizontal)
+            
+            VStack(alignment: .leading) {
+                let leageNameAndSeriesName = "\(cMatch.league.name) + \(cMatch.serie.full_name!)"
+                LeagueInfoView(leagueName: leageNameAndSeriesName, leagueImage: cMatch.league.image_url)
+            }.background(Color.fromHex(Colors.mainColor.rawValue))
+            
+        }.cornerRadius(10)
     }
 }

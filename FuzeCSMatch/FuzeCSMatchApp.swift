@@ -15,35 +15,15 @@ struct FuzeCSMatchApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
-            NavigationView {
-                if !appState.routes.isEmpty {
-                    SplashScreen()
-                        .environmentObject(appState)
-                } else {
-                    NavigationStack(path: $appState.routes) {
-                        MatchListScreen().environmentObject(model).environmentObject(appState)
-                            .navigationDestination(for: Route.self) { route in
-                                switch route {
-                                case .matchListScreen:
-                                    MatchListScreen()
-                                case .splashScreen:
-                                    SplashScreen()
-                                case .detailedMachScreen:
-                                    MatchListScreen()
-                                }
-                            }
-                    }
+            if isMatchListScreenActive {
+                MatchListScreen()
                     .environmentObject(model)
                     .environmentObject(appState)
-                    .onAppear {
-                        isMatchListScreenActive = true
-                    }
-                }
-                
+                    .background(Color.fromHex(Colors.secondaryColor.rawValue))
+            } else {
+                SplashView(isMatchListPresented: $isMatchListScreenActive)
             }
             
         }
     }
 }
-

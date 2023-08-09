@@ -8,39 +8,75 @@
 import SwiftUI
 
 struct MatchCard: View {
-    var opponent: Opponent?
+    var teamImage: String
+    var teamName: String
+    @State private var image: UIImage? = nil
+    
     var body: some View {
-        VStack {
-            if let url = URL(string: opponent?.image_url ?? "") {
-                AsyncImage(url: url) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                } placeholder: {
-                    Color.gray
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+        ZStack {
+            VStack(spacing: 0) {
+                RemoteImage(url: teamImage)
+                    .frame(width: 50, height: 50)
+                    .padding(.top, 30)
+                    .background(Color.clear)
+                VStack(spacing: 10) {
+                    Spacer().frame(minHeight: 30)
+                    Text(teamName)
+                        .font(.custom(Constants.CFRoboto.robotoMedium, size: 15))
+                        .foregroundColor(Color.fromHex(Colors.textTitleColor.rawValue))
+                        .lineLimit(2)
                 }
-                .padding(.bottom, 8)
-                .padding(.top, 4)
-                Text(opponent?.name ?? "")
-                    .foregroundColor(.white)
-                    .font(.caption)
-            } else {
-                Color.gray
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                    .padding(.bottom, 8)
-                    .padding(.top, 4)
-                Text(opponent?.name ?? "")
-                    .foregroundColor(.white)
-                    .font(.caption)
             }
-            
+            .background(Color.clear)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+            .padding()
+            .cornerRadius(20)
         }
+    }
+}
+
+struct RemoteImage: View {
+    private var url: URL?
+    
+    init(url: String) {
+        self.url = URL(string: url)
+    }
+    
+    var body: some View {
+            if let url = url {
+                AsyncImage(url: url) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    Image("teamA_placeholder")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            } else {
+                Image("teamA_placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+}
+
+class ImageLoader: ObservableObject {
+    @Published var image: UIImage?
+    private let url: URL
+    
+    init(url: String) {
+        self.url = URL(string: url)!
+        downloadImage()
+    }
+    
+    private func downloadImage() {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let loadedImage = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.image = loadedImage
+                }
+            }
+        }.resume()
     }
 }

@@ -6,31 +6,52 @@
 //
 
 import XCTest
-@testable import FuzeCSMatch
+@testable import FuzeCSMatch // Importe o nome do seu projeto aqui
 
-final class FuzeCSMatchTests: XCTestCase {
+class MatchesModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var matchesModel: MatchesModel!
+
+    @MainActor override func setUpWithError() throws {
+        matchesModel = MatchesModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        matchesModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testGetMatches() async throws {
+        let matches = try await matchesModel.getmacthes()
+        XCTAssertFalse(matches.isEmpty, "Failed to fetch matches")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGetPastMatches() async throws {
+        let pastMatches = try await matchesModel.getAPastMatches()
+        XCTAssertFalse(pastMatches.isEmpty, "Failed to fetch past matches")
     }
 
+    func testGetRunningMatches() async throws {
+        let runningMatches = try await matchesModel.getRunningMatches()
+        XCTAssertFalse(runningMatches.isEmpty, "Failed to fetch running matches")
+    }
+
+    func testGetUpcomingMatches() async throws {
+        let upcomingMatches = try await matchesModel.getUpcomingMatches()
+        XCTAssertFalse(upcomingMatches.isEmpty, "Failed to fetch upcoming matches")
+    }
+
+    func testGetDetailFromMatch() async throws {
+        let matchDetail = try await matchesModel.getDetailFromMatch()
+        XCTAssertNotNil(matchDetail, "Failed to fetch match detail")
+    }
+
+    func testGetMatchesFromJSON() async throws {
+        let matches = try await matchesModel.getMatchesFromJSON()
+        XCTAssertFalse(matches.isEmpty, "Failed to fetch matches from JSON")
+    }
+
+    @MainActor func testReadLocalFile() {
+        let jsonData = matchesModel.readLocalFile(forName: "matches")
+        XCTAssertNotNil(jsonData, "Failed to read local JSON file")
+    }
 }
